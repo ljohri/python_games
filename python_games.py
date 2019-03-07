@@ -1,3 +1,5 @@
+#https://www.pygame.org/docs/
+
 import pygame, sys, time
 
 from pygame.locals import *
@@ -36,6 +38,18 @@ while True:
         if event.type == QUIT:
             pygame.quit()
             sys.exit()
+            
+        if event.type == KEYDOWN:
+            if pygame.key.get_pressed()[K_KP2]:
+                dir = 'down'
+            if pygame.key.get_pressed()[K_KP6]:
+                dir = 'right'
+            if pygame.key.get_pressed()[K_KP8]:
+                dir = 'up'
+            if pygame.key.get_pressed()[K_KP4]:
+                dir = 'left'
+            print (dir)             
+
     # draw the black background onto the surface
     windowSurface.fill(BLACK)
     for b in blocks:
